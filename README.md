@@ -1,19 +1,46 @@
-# :earth_americas: GDP dashboard template
+# 📣 선거 연락 운영 통제형 MVP
 
-A simple Streamlit app showing the GDP of different countries in the world.
+선거 캠프 내부 운영을 위한 **합법 운영 중심 프로토타입** Streamlit 앱입니다.
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://gdp-dashboard-template.streamlit.app/)
+이 앱은 실제 대량 발송기가 아니라, 아래 통제를 먼저 갖추기 위한 목적입니다.
 
-### How to run it on your own machine
+- 연락처 관리(동의/수신거부/출처 포함)
+- 문자 템플릿 및 개인화 큐 생성
+- 전화 스크립트 및 통화 결과 기록
+- 감사 로그(누가/언제/무엇을 수행했는지)
 
-1. Install the requirements
+## 포함 기능
 
-   ```
-   $ pip install -r requirements.txt
-   ```
+1. **연락처 관리**
+   - 이름, 전화번호, 지역, 태그
+   - 동의 여부, 수신거부 여부, 출처 기록
+   - 발송 가능 대상 자동 분류
 
-2. Run the app
+2. **문자 캠페인 관리**
+   - 템플릿 작성 (`{name}` 변수 지원)
+   - 대상 큐 생성
+   - 동의 미확인/수신거부 자동 차단
+   - 실발송 대신 시뮬레이션 로그 기록
 
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+3. **전화 스크립트 관리**
+   - 스크립트 및 체크리스트 작성
+   - 시간대(06:00~23:00 KST) 안내
+   - 통화 결과 감사 로그 기록
+
+4. **이력/감사 로그**
+   - 사용자 액션 누적 기록
+   - CSV 다운로드
+
+## 실행 방법
+
+1. 의존성 설치
+
+```bash
+pip install -r requirements.txt
+```
+
+2. 앱 실행
+
+```bash
+streamlit run streamlit_app.py
+```
